@@ -15,6 +15,7 @@ const config = {
     password: PASSWORD,
     headers: authHeader(),
   },
+  headers: authHeader(),
 };
 
 const Add = () => {
@@ -32,9 +33,13 @@ const Add = () => {
   const navigate = useNavigate();
   const [error, setError] = useState(false);
 
+  // const isFormComplete = () => {
+  //   return Object.values(product).every(fieldValue => fieldValue.trim() !== '');
+  // };
+
   const isFormComplete = () => {
-    return Object.values(product).every(fieldValue => fieldValue.trim() !== '');
-  };  
+    return Object.values(product).every(fieldValue => fieldValue.toString().trim() !== '');
+  };
 
   const convertPriceToDecimal = (priceString) => {
     return parseFloat(priceString.replace(/,/g, ''));
