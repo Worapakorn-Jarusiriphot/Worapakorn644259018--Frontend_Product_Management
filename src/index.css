@@ -1,0 +1,536 @@
+/* :root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+} */
+
+
+/* รูปแบบสำหรับ NavBar */
+/* ปรับสีพื้นหลังของ NavBar เป็นสีดำ */
+.navbar-warning {
+  background-color: #333 !important;
+}
+
+.navbar-brand {
+  color: #f4f4f4 !important;
+  font-size: 1.5rem;
+  font-weight: bold;
+  transition: all 0.3s;
+}
+
+/* สีของลิงก์ใน NavBar ทำให้มีความเป็นเนื้อเนียนกับสีพื้นหลัง */
+.navbar .nav-link {
+  color: #f4f4f4 !important;
+}
+
+
+/* เมื่อผู้ใช้เลื่อนเมาส์ไปวางบนลิงก์ สีของลิงก์จะเปลี่ยน */
+.navbar .nav-link:hover {
+  color: #fff !important;
+  background-color: rgba(0,0,0,0.1) !important;
+}
+
+/* ปุ่มการลงชื่อออก มีเงาและการแปลงสีเมื่อผู้ใช้เลื่อนเมาส์ไปวางบนปุ่ม */
+.btn-outline-danger:hover {
+  color: #fff !important;
+  background-color: #d9534f !important;
+  border-color: #d43f00 !important;
+}
+
+
+
+/* h1{
+  font-family: cursive;
+  text-align: center;
+  color: white;
+  font-size: 2rem;
+} */
+
+/* รูปแบบสำหรับหัวข้อ Product */
+h1 {
+  font-size: 3rem;
+  font-weight: 600;
+  text-align: center;
+  color: #2c2c2c;
+  padding: 1rem 1.5rem;
+  border-radius: 15px;
+  /* background: linear-gradient(145deg, #f9f9f9, #e2e2e2);
+  border: 1px solid #b8b8b8;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.25); */
+  transition: all 0.2s;
+}
+
+
+
+.products{
+  display: flex;
+  flex-wrap: wrap;
+  color: rgb(0, 0, 0);
+  justify-content: center;
+  padding: 0px;
+}
+
+.products > img{
+  flex: 1;
+  object-fit: cover;
+  margin: auto;
+}
+
+input{
+  border: 1px solid #dfe1e5;
+  border-radius: 24px;
+  width: 50%;
+  height: 50%;
+  padding: 20px;
+  margin-bottom: 42px;
+  font-size: 20px;
+}
+
+input:focus{
+  outline: none;
+}
+.button{
+  padding: 8px 0;
+}
+/* .card{
+  margin-right: 5px;
+  margin-bottom: 5px;
+}
+.card:last-of-type{
+  margin-right: 0;
+} */
+
+
+
+/* Card styles */
+/* รูปแบบของ card */
+/* ตัวคอนเทนเนอร์หลักของการ์ดสินค้า 
+   มีความกว้างเฉพาะเจาะจง, เงา, และมุมมน 
+*/
+.card {
+  width: 18rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: 0.3s;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+/* รูปภาพของสินค้าบนการ์ด 
+   เต็มความกว้างของการ์ดและมีความสูงที่กำหนดไว้ 
+*/
+.card-img-top {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+/* ตัวคอนเทนเนอร์สำหรับรายละเอียดสินค้า (ชื่อ, คำอธิบาย, ฯลฯ) 
+   มีพื้นหลังสีเข้มและข้อความสีสว่าง 
+*/
+.card-body {
+  padding: 16px;
+  background-color: #1a1a1a;
+  color: rgba(255, 255, 255, 0.87);
+}
+
+/* ชื่อสินค้า มันเป็นตัวหนาและมีระยะห่างที่ด้านล่าง */
+.title {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+
+/* คำอธิบายสินค้าและข้อความอื่น ๆ 
+   พวกเขาเล็กกว่าชื่อและมีสีเทา 
+*/
+.card-text {
+  font-size: 14px;
+  color: gray;
+}
+
+
+.form{
+  justify-content: center;
+}
+.error{
+  color: red;
+  font-style: italic;
+}
+
+/* Styles for the Search component */
+.search-container {
+  margin-bottom: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  color: rgb(0, 0, 0);
+  justify-content: center;
+  padding: 0px;
+}
+
+.search-input {
+  margin-right: 5px;
+  margin-bottom: 5px;
+}
+
+/* .card {
+  margin: 1rem;
+} */
+
+.search-input {
+  width: 100%;
+}
+
+
+/* รูปแบบสำหรับกรอบ Sign In */
+.sign-in-card {
+  width: 100% !important; /* ขยายความกว้างของกรอบให้เต็มความกว้างของ container */
+  padding: 3rem; /* เพิ่มพื้นที่ว่างรอบ ๆ กรอบ */
+  background: linear-gradient(145deg, #ffffff, #f0f0f0);
+  border: 2px solid #b8b8b8; /* ปรับปรุงขอบให้หนาขึ้น */
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
+  transition: all 0.2s;
+}
+
+.sign-in-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 12px 12px 22px rgba(0, 0, 0, 0.3);
+}
+
+.sign-in-card h2 {
+  font-size: 2.5rem; /* เพิ่มขนาดตัวอักษร */
+  font-weight: bold;
+  color: #2a2a2a;
+  margin-bottom: 2rem; /* เพิ่มพื้นที่ว่างระหว่างหัวข้อกับแบบฟอร์ม */
+}
+
+.sign-in-card .form-control {
+  border-radius: 15px; /* เพิ่มรูปแบบขอบให้มน */
+  padding: 1rem 1.5rem; /* เพิ่มพื้นที่ว่างภายในช่องป้อนข้อมูล */
+  font-size: 1.2rem;
+  border: 1px solid #b8b8b8;
+}
+
+.sign-in-card .btn {
+  font-size: 1.2rem;
+  padding: 0.7rem 1.5rem; /* เพิ่มพื้นที่ว่างภายในปุ่ม */
+  border-radius: 15px; /* เพิ่มรูปแบบขอบให้มน */
+  transition: all 0.2s;
+}
+
+.sign-in-card .btn:hover {
+  transform: translateY(-4px);
+  box-shadow: 8px 8px 14px rgba(0, 0, 0, 0.3);
+}
+
+/* รูปแบบสำหรับกรอบ Sign In ภายในคลาส col-6 card justify-content-center */
+.col-6.card.justify-content-center {
+  width: 100%; /* ขยายความกว้างของกรอบ */
+  padding: 4rem; /* เพิ่มพื้นที่ว่างรอบ ๆ กรอบ */
+  background: linear-gradient(145deg, #ffffff, #f0f0f0);
+  border: 2px solid #c8c8c8;
+  box-shadow: 12px 12px 24px rgba(0, 0, 0, 0.25);
+  transition: all 0.2s;
+}
+
+.col-6.card.justify-content-center h2 {
+  font-size: 2.8rem; /* เพิ่มขนาดตัวอักษร */
+  font-weight: bold;
+  color: #2a2a2a;
+  margin-bottom: 2.5rem; /* เพิ่มพื้นที่ว่างระหว่างหัวข้อกับแบบฟอร์ม */
+}
+
+.col-6.card.justify-content-center .form-control {
+  border-radius: 18px; /* เพิ่มรูปแบบขอบให้มน */
+  padding: 1.2rem 1.8rem; /* เพิ่มพื้นที่ว่างภายในช่องป้อนข้อมูล */
+  font-size: 1.3rem;
+  border: 1px solid #b8b8b8;
+}
+
+.col-6.card.justify-content-center .btn {
+  font-size: 1.3rem;
+  padding: 0.8rem 1.8rem; /* เพิ่มพื้นที่ว่างภายในปุ่ม */
+  border-radius: 18px; /* เพิ่มรูปแบบขอบให้มน */
+  transition: all 0.2s;
+}
+
+.col-6.card.justify-content-center .btn:hover {
+  transform: translateY(-5px);
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.35);
+}
+
+
+/* รูปแบบสำหรับ card-header ภายในกรอบ Sign In */
+.card-header {
+  background-color: #f8f8f8; /* กำหนดสีพื้นหลัง */
+  text-align: center;
+  border-bottom: 2px solid #e0e0e0; /* ปรับปรุงขอบส่วนล่าง */
+  font-size: 2rem; /* เพิ่มขนาดตัวอักษร */
+  font-weight: bold; /* ทำให้ตัวอักษรหนา */
+  color: #333333; /* กำหนดสีตัวอักษร */
+  padding: 1.2rem 1.5rem; /* เพิ่มพื้นที่ว่างภายใน */
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1); /* เพิ่มเงาส่วนบน */
+}
+
+
+/* .card-header:hover {
+   /* ปรับสีพื้นหลังเมื่อผู้ใช้เลื่อนเมาส์ไปวางบน */
+  /* background-color: #f0f0f0; */
+  /* เพิ่มเอฟเฟกต์การเลื่อนขึ้นเมื่อผู้ใช้เลื่อนเมาส์ไปวางบน */
+  /* transform: translateY(-2px);  */
+/* } */ 
+
+
+
+/* ปรับปรุงรูปแบบสำหรับปุ่ม btn-success และ btn-danger */
+.btn-success, .btn-danger {
+  width: 100%; /* ขยายความกว้างของปุ่มให้เต็มความกว้างของ container */
+  padding: 1.2rem 1.5rem; /* เพิ่มพื้นที่ว่างภายในปุ่ม */
+  border-radius: 20px; /* เพิ่มรูปแบบขอบให้มน */
+  font-size: 1.4rem; /* เพิ่มขนาดตัวอักษร */
+  margin-bottom: 1rem; /* เพิ่มระยะห่างระหว่างปุ่ม */
+  transition: all 0.3s; /* เพิ่มเอฟเฟกต์การเปลี่ยนแปลงสมูท */
+}
+
+.btn-success {
+  background-color: #28a745; /* ปรับสีพื้นหลัง */
+  border: none; /* ลบขอบปุ่ม */
+  color: white; /* กำหนดสีตัวอักษร */
+}
+
+.btn-danger {
+  background-color: #dc3545; /* ปรับสีพื้นหลัง */
+  border: none; /* ลบขอบปุ่ม */
+  color: white; /* กำหนดสีตัวอักษร */
+}
+
+.btn-success:hover, .btn-danger:hover {
+  transform: translateY(-4px); /* เพิ่มเอฟเฟกต์การเลื่อนขึ้นเมื่อผู้ใช้เลื่อนเมาส์ไปวางบน */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); /* เพิ่มเงาเมื่อผู้ใช้เลื่อนเมาส์ไปวางบน */
+}
+
+
+
+/* ปรับปรุงรูปแบบสำหรับปุ่ม btn-danger และ btn-warning ให้มีขนาดยาวถึงสุดขอบการ์ด */
+.card .btn-danger.px-2.mx-1, .card .btn-warning.px-2.mx-1 {
+  width: 100%; /* ขยายความกว้างของปุ่มให้เต็มขนาดของการ์ด */
+  padding: 1.2rem 0.5rem; /* เพิ่มพื้นที่ว่างภายในปุ่ม */
+  border-radius: 12px; /* เพิ่มรูปแบบขอบให้มน */
+  font-size: 1.1rem; /* เพิ่มขนาดตัวอักษร */
+  transition: all 0.3s; /* เพิ่มเอฟเฟกต์การเปลี่ยนแปลงสมูท */
+  box-sizing: border-box; /* กำหนดวิธีการคำนวณความกว้างและความสูง */
+  margin: 0.5rem 0; /* เพิ่มระยะห่างระหว่างปุ่มและเว้นระยะห่างด้านบนและด้านล่าง */
+}
+
+.card .btn-danger.px-2.mx-1 {
+  background-color: #dc3545; /* ปรับสีพื้นหลัง */
+  border: none; /* ลบขอบปุ่ม */
+  color: white; /* กำหนดสีตัวอักษร */
+}
+
+.card .btn-warning.px-2.mx-1 {
+  background-color: #ffc107; /* ปรับสีพื้นหลัง */
+  border: none; /* ลบขอบปุ่ม */
+  color: #333; /* กำหนดสีตัวอักษร */
+}
+
+.card .btn-danger.px-2.mx-1:hover, .card .btn-warning.px-2.mx-1:hover {
+  transform: translateY(-3px); /* เพิ่มเอฟเฟกต์การเลื่อนขึ้นเมื่อผู้ใช้เลื่อนเมาส์ไปวางบน */
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.15); /* เพิ่มเงาเมื่อผู้ใช้เลื่อนเมาส์ไปวางบน */
+}
+
+
+
+/* ปรับปรุงรูปแบบสำหรับการ์ด profile */
+.card.profile {
+  width: 100%;
+  max-width: 1800px;
+  margin: 2rem auto;
+  padding: 9.5rem;
+  border: 1px solid #e0e0e0;
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  background-color: #f9f9f9;
+  transition: transform 0.3s;
+}
+
+.card.profile:hover {
+  transform: scale(1.03); /* เพิ่มเอฟเฟกต์การขยายขนาดเมื่อผู้ใช้เลื่อนเมาส์ไปวางบน */
+}
+
+.card.profile h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #444;
+  border-bottom: 3px solid #e0e0e0;
+  padding-bottom: 0.8rem;
+}
+
+.card.profile img {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 2rem;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+.card.profile p {
+  font-size: 1.3rem;
+  color: #555;
+  margin-bottom: 1.5rem;
+}
+
+.card.profile .btn {
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  border-radius: 12px;
+}
+
+
+
+/* ปรับปรุงรูปแบบสำหรับ form-inline, badge, h4 และ nav-link ใน NavBar */
+
+/* ปรับปรุงรูปแบบสำหรับ form-inline */
+.form-inline input[type="text"] {
+  width: 220px;
+  padding: 0.6rem 1.2rem;
+  border-radius: 25px;
+  border: 1px solid #ccc;
+  transition: width 0.4s;
+}
+
+.form-inline input[type="text"]:focus {
+  width: 270px;
+  border-color: #888;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.12);
+}
+
+.form-inline button {
+  margin-left: 12px;
+  padding: 0.6rem 1.4rem;
+  font-size: 1.1rem;
+  border-radius: 25px;
+  background-color: #008cff;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.form-inline button:hover {
+  background-color: #006bb3;
+}
+
+/* ปรับปรุงรูปแบบสำหรับ badge */
+.badge {
+  font-size: 1.2rem;
+  padding: 0.4rem 0.8rem;
+  border-radius: 15px;
+  color: #fff;
+}
+
+/* ปรับปรุงรูปแบบสำหรับ h4 แสดงชื่อผู้ใช้ */
+.mr-sm-2 h4 {
+  font-size: 1.6rem;
+  color: #333;
+  margin-right: 1.5rem;
+}
+
+/* ปรับปรุงรูปแบบสำหรับ nav-link */
+.nav-link {
+  font-size: 1.3rem;
+  color: #555;
+  transition: color 0.3s;
+}
+
+.nav-link:hover {
+  color: #333;
+}
+
+
+
+
+/* ปรับปรุงรูปแบบสำหรับปุ่ม Sign Out ใน NavBar */
+
+.btn.btn-outline-danger.my-2.my-sm-0 {
+  padding: 0.7rem 1.6rem;
+  font-size: 1.2rem;
+  border-radius: 25px;
+  border: 2px solid #f44336;
+  color: #f44336;
+  transition: all 0.3s;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.btn.btn-outline-danger.my-2.my-sm-0:hover {
+  background-color: #f44336;
+  color: #fff;
+  box-shadow: 0 6px 10px rgba(244, 67, 54, 0.2);
+}
+
