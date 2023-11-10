@@ -112,7 +112,7 @@ const SignUp = () => {
                 />
               </div>
               <Link to="" className="btn btn-success" onClick={handleClick}>
-                Sig Up
+                Sign Up
               </Link>{" "}
               <Link to="/" className="btn btn-danger" onClick={handleClear}>
                 Cancle

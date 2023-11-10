@@ -77,7 +77,7 @@ const SignIn = () => {
                 />
               </div>
               <Link to="" className="btn btn-success" onClick={handleClick}>
-                Sig In
+                Sign In
               </Link>{" "}
               <Link to="/" className="btn btn-danger" onClick={handleClear}>
                 Cancle
