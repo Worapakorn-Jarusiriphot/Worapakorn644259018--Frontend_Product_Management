@@ -1,21 +1,20 @@
 import React, { useState, useEffect } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
-import authHeader from "../services/auth-header";
-import axios from "axios";
+import api from "../services/api"
 
-const URL = "http://localhost:5000";  // แทนที่ด้วย URL ของเซิร์ฟเวอร์ของคุณ
-const USERNAME = "root";     // แทนที่ด้วย username ของคุณ
-const PASSWORD = null;     // แทนที่ด้วย password ของคุณ
-// const URL = import.meta.env.VITE_BASE_URL;
-// const USERNAME = import.meta.env.VITE_BASE_USERNAME;
-// const PASSWORD = import.meta.env.VITE_BASE_PASSWORD;
-const config = {
-  auth: {
-    username: USERNAME,
-    password: PASSWORD,
-  },
-  headers: authHeader(),
-};
+// const URL = "http://localhost:5000";  // แทนที่ด้วย URL ของเซิร์ฟเวอร์ของคุณ
+// const USERNAME = "root";     // แทนที่ด้วย username ของคุณ
+// const PASSWORD = null;     // แทนที่ด้วย password ของคุณ
+// // const URL = import.meta.env.VITE_BASE_URL;
+// // const USERNAME = import.meta.env.VITE_BASE_USERNAME;
+// // const PASSWORD = import.meta.env.VITE_BASE_PASSWORD;
+// const config = {
+//   auth: {
+//     username: USERNAME,
+//     password: PASSWORD,
+//   },
+//   headers: authHeader(),
+// };
 
 const Update = () => {
   const [product, setProduct] = useState({
@@ -50,9 +49,8 @@ const Update = () => {
   useEffect(() => {
     const fetchAllProduct = async () => {
       try {
-        const res = await axios.get(
-          `${URL}/products/${productId}`,
-          config
+        const res = await api.get(
+          `/products/${productId}`
         );
         setProduct(res.data);
       } catch (error) {
@@ -85,7 +83,7 @@ const Update = () => {
     try {
       product.price = convertPriceToDecimal(product.price);
       
-      await axios.put(`${URL}/products/${productId}`, product, config);
+      await api.put(`/products/${productId}`, product);
       navigate("/");
     } catch (error) {
       console.error(error);

@@ -1,22 +1,23 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import axios from "axios";
+// import api from "api";
 import Card from "../components/Card";
-import authHeader from "../services/auth-header";
+// import authHeader from "../services/auth-header";
+import api from "../services/api"
 
-const URL = "http://localhost:5000";  // แทนที่ด้วย URL ของเซิร์ฟเวอร์ของคุณ
-const USERNAME = "root";     // แทนที่ด้วย username ของคุณ
-const PASSWORD = null;     // แทนที่ด้วย password ของคุณ
-// const URL = import.meta.env.VITE_BASE_URL;
-// const USERNAME = import.meta.env.VITE_BASE_USERNAME;
-// const PASSWORD = import.meta.env.VITE_BASE_PASSWORD;
-const config = {
-  auth: {
-    username: USERNAME,
-    password: PASSWORD,
-  },
-  headers: authHeader(),
-};
+// const URL = "http://localhost:5000";  // แทนที่ด้วย URL ของเซิร์ฟเวอร์ของคุณ
+// const USERNAME = "root";     // แทนที่ด้วย username ของคุณ
+// const PASSWORD = null;     // แทนที่ด้วย password ของคุณ
+// // const URL = import.meta.env.VITE_BASE_URL;
+// // const USERNAME = import.meta.env.VITE_BASE_USERNAME;
+// // const PASSWORD = import.meta.env.VITE_BASE_PASSWORD;
+// const config = {
+//   auth: {
+//     username: USERNAME,
+//     password: PASSWORD,
+//   },
+//   headers: authHeader(),
+// };
 
 const Search = () => {
   const [data, setData] = useState([]);
@@ -25,7 +26,7 @@ const Search = () => {
 
   const fetchData = async () => {
     try {
-      const res = await axios.get(`${URL}/products`, config);
+      const res = await api.get(`/products`);
       setData(res.data);
     } catch (error) {
       console.error("Error fetching data:", error);
@@ -39,7 +40,7 @@ const Search = () => {
   
 const handleDelete = async (id) => {
   try {
-    await axios.delete(`${URL}/products/${id}`, config);
+    await api.delete(`/products/${id}`);
     fetchData();
   } catch (error) {
     console.error("Error deleting product:", error);

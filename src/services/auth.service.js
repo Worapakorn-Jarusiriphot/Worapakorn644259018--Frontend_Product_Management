@@ -1,13 +1,13 @@
 import axios from "axios";
 
-const URL = "http://localhost:5000";  // แทนที่ด้วย URL ของเซิร์ฟเวอร์ของคุณ
-const API_URL = URL + "/api/auth/";
-const USERNAME = "root";     // แทนที่ด้วย username ของคุณ
-const PASSWORD = null;     // แทนที่ด้วย password ของคุณ
-// const URL = import.meta.env.VITE_BASE_URL;
+// const URL = "http://localhost:5000";  // แทนที่ด้วย URL ของเซิร์ฟเวอร์ของคุณ
 // const API_URL = URL + "/api/auth/";
-// const USERNAME = import.meta.env.VITE_BASE_USERNAME;
-// const PASSWORD = import.meta.env.VITE_BASE_PASSWORD;
+// const USERNAME = "root";     // แทนที่ด้วย username ของคุณ
+// const PASSWORD = null;     // แทนที่ด้วย password ของคุณ
+const URL = import.meta.env.VITE_BASE_URL;
+const API_URL = URL + "/api/auth/";
+const USERNAME = import.meta.env.VITE_BASE_USERNAME;
+const PASSWORD = import.meta.env.VITE_BASE_PASSWORD;
 const config = {
   auth: {
     username: USERNAME,
