@@ -68,6 +68,225 @@ button:focus-visible {
   }
 } */
 
+/* คลาสสำหรับตั้งค่าหลักของภาชนะที่มีฟอร์ม */
+.signin-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #F0F2F5;
+}
+
+/* สไตล์ของการ์ดที่มีฟอร์มการเข้าสู่ระบบ */
+.signin-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+}
+
+/* สไตล์หัวข้อของการ์ด */
+.signin-header {
+  margin-bottom: 1rem;
+  color: #333;
+  text-align: center;
+}
+
+/* สไตล์สำหรับกลุ่มฟอร์ม */
+.form-group {
+  margin-bottom: 1rem;
+}
+
+/* สไตล์สำหรับควบคุมฟอร์ม (ช่องกรอกข้อมูล) */
+.form-control {
+  display: block;
+  width: 100%;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #495057;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+/* เมื่อช่องกรอกข้อมูลมีการโฟกัส */
+.form-control:focus {
+  color: #495057;
+  background-color: #fff;
+  border-color: #80bdff;
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+/* สไตล์ปุ่มหลักและปุ่มรอง */
+.btn-primary {
+  width: 100%;
+  margin-top: 2px; /* เพิ่มระยะห่างด้านบน 16px */
+  margin-bottom: 2px; /* เพิ่มระยะห่างด้านล่าง 16px */
+  color: #fff;
+  background-color: #000000;
+  border-color: #000000;
+  box-shadow: none;
+}
+
+.btn-primary:hover {
+  width: 100%;
+  margin-top: 2px; /* เพิ่มระยะห่างด้านบน 16px */
+  margin-bottom: 2px; /* เพิ่มระยะห่างด้านล่าง 16px */
+  color: #fff;
+  background-color: #4b4b4b;
+  border-color: #4e4e4e;
+}
+
+.btn-secondary {
+  width: 100%;
+  margin-top: 16px; /* เพิ่มระยะห่างด้านบน 16px */
+  margin-bottom: 16px; /* เพิ่มระยะห่างด้านล่าง 16px */
+  color: #fff;
+  background-color: #6c757d;
+  border-color: #6c757d;
+}
+
+.btn-secondary:hover {
+  width: 100%;
+  margin-top: 16px; /* เพิ่มระยะห่างด้านบน 16px */
+  margin-bottom: 16px; /* เพิ่มระยะห่างด้านล่าง 16px */
+  color: #fff;
+  background-color: #5a6268;
+  border-color: #545b62;
+}
+
+/* สไตล์ข้อความแสดงข้อผิดพลาด */
+.signin-error {
+  color: #dc3545;
+  margin-bottom: 1rem;
+}
+
+/* สไตล์สำหรับส่วนท้ายของการ์ด */
+.signin-footer {
+  margin-top: 1rem;
+  text-align: center;
+}
+
+/* ลิงก์ในส่วนท้ายของการ์ด */
+.signin-footer a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.signin-footer a:hover {
+  text-decoration: underline;
+}
+
+
+/* ปรับความกว้างของการ์ดให้เป็น 100% */
+.synnex-login__panel {
+  width: 100%;
+  /* คุณสมบัติอื่นๆ ที่คุณต้องการให้คงไว้ */
+}
+
+/* ตรวจสอบให้แน่ใจว่าปุ่มยืดเต็มความกว้าง */
+.synnex-login__submit {
+  width: 100%;
+  /* คุณสมบัติอื่นๆ ที่คุณต้องการให้คงไว้ */
+}
+
+
+/* สไตล์ของการ์ดที่มีฟอร์มการลงทะเบียน */
+.signup-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+}
+
+/* สไตล์หัวข้อของการ์ดการลงทะเบียน */
+.signup-header {
+  margin-bottom: 1rem;
+  color: #333;
+  text-align: center;
+}
+
+/* สไตล์สำหรับปุ่มการลงทะเบียน */
+.signup-submit {
+  width: 100%;
+  padding: 14px;
+  background-color: #1877f2;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 17px;
+  cursor: pointer;
+}
+
+.signup-submit:hover {
+  background-color: #165eab;
+}
+
+
+.container2 {
+  flex: 1;
+  padding-left: 50px;
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  color: black;
+}
+
+
+
+
+.signup-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f0f2f5;
+}
+
+.signup-form {
+  background: white;
+  padding: 2em;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  text-align: center;
+}
+
+.signup-form h1 {
+  margin-bottom: 1em;
+}
+
+.signup-form input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 1em;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  box-sizing: border-box;
+}
+
+.signup-form button {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #4267b2;
+  color: white;
+  cursor: pointer;
+}
+
+.signup-form button:hover {
+  background-color: #365899;
+}
+
 
 /* รูปแบบสำหรับ NavBar */
 /* ปรับสีพื้นหลังของ NavBar เป็นสีดำ */
@@ -180,6 +399,13 @@ input:focus{
   margin-bottom: 20px;
 }
 
+.card-text-detail {
+  width: 100%; /* กำหนดความกว้างขององค์ประกอบให้เต็มขอบเขตของการ์ด */
+  white-space: nowrap; /* ไม่ขึ้นบรรทัดใหม่ */
+  overflow: hidden; /* ซ่อนเนื้อหาที่เกินขนาดกำหนด */
+  text-overflow: ellipsis; /* ใช้ "..." แทนเนื้อหาที่ถูกซ่อน */
+}
+
 /* รูปภาพของสินค้าบนการ์ด 
    เต็มความกว้างของการ์ดและมีความสูงที่กำหนดไว้ 
 */
@@ -192,7 +418,19 @@ input:focus{
 /* ตัวคอนเทนเนอร์สำหรับรายละเอียดสินค้า (ชื่อ, คำอธิบาย, ฯลฯ) 
    มีพื้นหลังสีเข้มและข้อความสีสว่าง 
 */
+.card-body2 {
+  padding: 16px;
+  background-color: #1a1a1a;
+  color: rgba(255, 255, 255, 0.87);
+}
+
 .card-body {
+  padding: 16px;
+  background-color: #ffffff;
+  color: rgba(255, 255, 255, 0.87);
+}
+
+.card-body3 {
   padding: 16px;
   background-color: #1a1a1a;
   color: rgba(255, 255, 255, 0.87);
@@ -357,15 +595,15 @@ input:focus{
 }
 
 .btn-success {
-  background-color: #28a745; /* ปรับสีพื้นหลัง */
+  background-color: #000000; /* ปรับสีพื้นหลัง */
   border: none; /* ลบขอบปุ่ม */
-  color: white; /* กำหนดสีตัวอักษร */
+  color: rgb(255, 255, 255); /* กำหนดสีตัวอักษร */
 }
 
 .btn-danger {
-  background-color: #dc3545; /* ปรับสีพื้นหลัง */
+  background-color: #686868; /* ปรับสีพื้นหลัง */
   border: none; /* ลบขอบปุ่ม */
-  color: white; /* กำหนดสีตัวอักษร */
+  color: rgb(255, 255, 255); /* กำหนดสีตัวอักษร */
 }
 
 .btn-success:hover, .btn-danger:hover {
@@ -386,19 +624,40 @@ input:focus{
   margin: 0.5rem 0; /* เพิ่มระยะห่างระหว่างปุ่มและเว้นระยะห่างด้านบนและด้านล่าง */
 }
 
+.card2 .btn-danger.px-2.mx-1, .card2 .btn-warning.px-2.mx-1 {
+  width: 100%; /* ขยายความกว้างของปุ่มให้เต็มขนาดของการ์ด */
+  padding: 1.2rem 0.5rem; /* เพิ่มพื้นที่ว่างภายในปุ่ม */
+  border-radius: 12px; /* เพิ่มรูปแบบขอบให้มน */
+  font-size: 1.1rem; /* เพิ่มขนาดตัวอักษร */
+  transition: all 0.3s; /* เพิ่มเอฟเฟกต์การเปลี่ยนแปลงสมูท */
+  box-sizing: border-box; /* กำหนดวิธีการคำนวณความกว้างและความสูง */
+  margin: 0.5rem 0; /* เพิ่มระยะห่างระหว่างปุ่มและเว้นระยะห่างด้านบนและด้านล่าง */
+}
+
 .card .btn-danger.px-2.mx-1 {
   background-color: #dc3545; /* ปรับสีพื้นหลัง */
   border: none; /* ลบขอบปุ่ม */
   color: white; /* กำหนดสีตัวอักษร */
 }
 
-.card .btn-warning.px-2.mx-1 {
+.card2 .btn-danger.px-2.mx-1 {
+  background-color: #dc3545; /* ปรับสีพื้นหลัง */
+  border: none; /* ลบขอบปุ่ม */
+  color: white; /* กำหนดสีตัวอักษร */
+}
+
+.card2 .btn-warning.px-2.mx-1 {
   background-color: #ffc107; /* ปรับสีพื้นหลัง */
   border: none; /* ลบขอบปุ่ม */
   color: #333; /* กำหนดสีตัวอักษร */
 }
 
 .card .btn-danger.px-2.mx-1:hover, .card .btn-warning.px-2.mx-1:hover {
+  transform: translateY(-3px); /* เพิ่มเอฟเฟกต์การเลื่อนขึ้นเมื่อผู้ใช้เลื่อนเมาส์ไปวางบน */
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.15); /* เพิ่มเงาเมื่อผู้ใช้เลื่อนเมาส์ไปวางบน */
+}
+
+.card2 .btn-danger.px-2.mx-1:hover, .card2 .btn-warning.px-2.mx-1:hover {
   transform: translateY(-3px); /* เพิ่มเอฟเฟกต์การเลื่อนขึ้นเมื่อผู้ใช้เลื่อนเมาส์ไปวางบน */
   box-shadow: 0 10px 15px rgba(0, 0, 0, 0.15); /* เพิ่มเงาเมื่อผู้ใช้เลื่อนเมาส์ไปวางบน */
 }
@@ -419,7 +678,7 @@ input:focus{
 }
 
 .card.profile:hover {
-  transform: scale(1.03); /* เพิ่มเอฟเฟกต์การขยายขนาดเมื่อผู้ใช้เลื่อนเมาส์ไปวางบน */
+  transform: none;
 }
 
 .card.profile h2 {
@@ -534,3 +793,118 @@ input:focus{
   box-shadow: 0 6px 10px rgba(244, 67, 54, 0.2);
 }
 
+
+
+.synnex-login__container {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  background-color: #f0f2f5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.synnex-login__panel {
+  background: #ffffff;
+  width: 400px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.synnex-login__title {
+  font-size: 32px;
+  color: #1877f2;
+  margin-bottom: 24px;
+}
+
+.synnex-login__form-group {
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.synnex-login__input {
+  width: 100%;
+  padding: 14px;
+  margin-bottom: 10px;
+  border: 1px solid #dddfe2;
+  border-radius: 6px;
+  box-sizing: border-box;
+}
+
+.synnex-login__submit {
+  width: 100%;
+  padding: 14px;
+  background-color: #1877f2;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 17px;
+  cursor: pointer;
+}
+
+.synnex-login__submit:hover {
+  background-color: #165eab;
+}
+
+.synnex-login__secondary-action {
+  background-color: #42b72a;
+  color: white;
+  padding: 14px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.synnex-login__secondary-action:hover {
+  background-color: #36a420;
+}
+
+.synnex-login__info-link {
+  color: #1877f2;
+  font-size: 14px;
+  text-decoration: none;
+  margin-top: 10px;
+}
+
+.synnex-login__info-link:hover {
+  text-decoration: underline;
+}
+
+
+
+
+
+
+/* ตรวจสอบให้แน่ใจว่า class names ตรงกับที่ใช้ใน JSX */
+.details-container {
+  padding: 20px;
+  font-family: 'Arial', sans-serif;
+}
+
+.product-title {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.product-detail {
+  background-color: #f8f8f8;
+  padding: 15px;
+  border-radius: 5px;
+}
+
+.detail {
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+.detail strong {
+  color: #000;
+}

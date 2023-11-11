@@ -2,22 +2,16 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import AuthService from "../services/auth.service";
 import { useAuthContext } from "../context/AuthContext";
+import Loading from "../components/Loading";
+import * as loadingData from "../loading/rainbow.json"
+import Swal from 'sweetalert2'
 
-// import axios from "axios";
-// const URL = import.meta.env.VITE_BASE_URL;
-// const USERNAME = import.meta.env.VITE_BASE_USERNAME;
-// const PASSWORD = import.meta.env.VITE_BASE_PASSWORD;
-// const config = {
-//   auth: {
-//     username: USERNAME,
-//     password: PASSWORD,
-//   },
-// };
 const SignIn = () => {
   const [user, setUser] = useState({
     username: "",
     password: "",
   });
+  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
   const {login} = useAuthContext();
   const [error, setError] = useState(false);
@@ -33,10 +27,8 @@ const SignIn = () => {
   };
   const handleClick = async (e) => {
     e.preventDefault();
+    setLoading(true);  // Start loading before the try-catch block
     try {
-      //alert("Sign In");
-      // await axios.post(`${URL}/products`, product, config);
-      
       const currentUser = await AuthService.login(user.username, user.password);
       login(currentUser);
       navigate("/profile");
@@ -44,48 +36,51 @@ const SignIn = () => {
       console.error(error);
       setError(true);
     }
+    setLoading(false); // Stop loading after the try-catch block is done
   };
   return (
-    <div className="container">
+    <div className="signin-container">
       <h1>Product Management</h1>
-      <div className="row form">
-        <div className="col-6 card justify-content-center">
-          <h5 className="card-header">Sign In</h5>
-          <div className="error">{error && "Somthing went wrong !!"}</div>
-          <div className="card-body">
-            <form>
-              <div className="form-group">
-                <label htmlFor="name">Username</label>
-                <input
-                  type="text"
-                  className="form-control"
-                  name="username"
-                  placeholder="Username"
-                  onChange={handleChange}
-                  value={user.username}
-                />
-              </div>
-              <div className="form-group">
-                <label htmlFor="name">Password</label>
-                <input
-                  type="password"
-                  className="form-control"
-                  name="password"
-                  placeholder="Password"
-                  onChange={handleChange}
-                  value={user.password}
-                />
-              </div>
-              <Link to="" className="btn btn-success" onClick={handleClick}>
-                Sign In
-              </Link>{" "}
-              <Link to="/" className="btn btn-danger" onClick={handleClear}>
-                Cancle
-              </Link>
-            </form>
+      {
+        !loading ? (
+      <div className="signin-card">
+        <h2 className="signin-header">Sign In</h2>
+        <div className="signin-error">{error && "Something went wrong !! หรือ เกิดข้อผิดพลาด !!"}</div>
+        <form>
+          <div className="form-group">
+            <label htmlFor="username">Username</label>
+            <input
+              type="text"
+              className="form-control"
+              name="username"
+              placeholder="Username"
+              onChange={handleChange}
+              value={user.username}
+            />
           </div>
+          <div className="form-group">
+            <label htmlFor="password">Password</label>
+            <input
+              type="password"
+              className="form-control"
+              name="password"
+              placeholder="Password"
+              onChange={handleChange}
+              value={user.password}
+            />
+          </div>
+          <button type="submit" className="btn btn-primary" onClick={handleClick}>Sign In</button>
+          <button type="button" className="btn btn-secondary" onClick={handleClear}>Clear</button>
+        </form>
+        <div className="signin-footer">
+          <Link to="/signup">Don't have an account? Register</Link>
         </div>
       </div>
+                            ) : (
+                              // <Loading animation={loadingData}/>
+                              <Loading animation={{ ...loadingData }} />
+                            )
+                          }
     </div>
   );
 };
