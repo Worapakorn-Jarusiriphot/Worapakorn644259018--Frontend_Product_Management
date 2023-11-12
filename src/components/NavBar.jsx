@@ -11,7 +11,6 @@ const NavBar = () => {
     navigate("/signin");
   }
 
-  //const [user, setUser] = useState(AuthService.getCurrentUser());
   return (
     <nav className="navbar navbar-expand-lg bg-warning navbar-warning">
       <div className="container-fluid">

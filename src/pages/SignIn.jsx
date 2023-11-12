@@ -13,7 +13,7 @@ const SignIn = () => {
   });
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
-  const {login} = useAuthContext();
+  const { login } = useAuthContext();
   const [error, setError] = useState(false);
   const handleChange = (e) => {
     setUser((prev) => ({ ...prev, [e.target.name]: e.target.value }));
@@ -43,44 +43,43 @@ const SignIn = () => {
       <h1>Product Management</h1>
       {
         !loading ? (
-      <div className="signin-card">
-        <h2 className="signin-header">Sign In</h2>
-        <div className="signin-error">{error && "Something went wrong !! หรือ เกิดข้อผิดพลาด !!"}</div>
-        <form>
-          <div className="form-group">
-            <label htmlFor="username">Username</label>
-            <input
-              type="text"
-              className="form-control"
-              name="username"
-              placeholder="Username"
-              onChange={handleChange}
-              value={user.username}
-            />
+          <div className="signin-card">
+            <h2 className="signin-header">Sign In</h2>
+            <div className="signin-error">{error && "Something went wrong !! หรือ เกิดข้อผิดพลาด !!"}</div>
+            <form>
+              <div className="form-group">
+                <label htmlFor="username">Username</label>
+                <input
+                  type="text"
+                  className="form-control"
+                  name="username"
+                  placeholder="Username"
+                  onChange={handleChange}
+                  value={user.username}
+                />
+              </div>
+              <div className="form-group">
+                <label htmlFor="password">Password</label>
+                <input
+                  type="password"
+                  className="form-control"
+                  name="password"
+                  placeholder="Password"
+                  onChange={handleChange}
+                  value={user.password}
+                />
+              </div>
+              <button type="submit" className="btn btn-primary" onClick={handleClick}>Sign In</button>
+              <button type="button" className="btn btn-secondary" onClick={handleClear}>Clear</button>
+            </form>
+            <div className="signin-footer">
+              <Link to="/signup">Don't have an account? Register</Link>
+            </div>
           </div>
-          <div className="form-group">
-            <label htmlFor="password">Password</label>
-            <input
-              type="password"
-              className="form-control"
-              name="password"
-              placeholder="Password"
-              onChange={handleChange}
-              value={user.password}
-            />
-          </div>
-          <button type="submit" className="btn btn-primary" onClick={handleClick}>Sign In</button>
-          <button type="button" className="btn btn-secondary" onClick={handleClear}>Clear</button>
-        </form>
-        <div className="signin-footer">
-          <Link to="/signup">Don't have an account? Register</Link>
-        </div>
-      </div>
-                            ) : (
-                              // <Loading animation={loadingData}/>
-                              <Loading animation={{ ...loadingData }} />
-                            )
-                          }
+        ) : (
+          <Loading animation={{ ...loadingData }} />
+        )
+      }
     </div>
   );
 };

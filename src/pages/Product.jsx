@@ -8,17 +8,6 @@ import Loading from "../components/Loading";
 import * as loadingData from "../loading/rainbow.json"
 import Swal from 'sweetalert2'
 
-// const URL = import.meta.env.VITE_BASE_URL;
-// const USERNAME = import.meta.env.VITE_BASE_USERNAME;
-// const PASSWORD = import.meta.env.VITE_BASE_PASSWORD;
-// const config = {
-//   auth: {
-//     username: USERNAME,
-//     password: PASSWORD,
-//   },
-//   headers: authHeader(),
-// };
-
 const Product = () => {
   const [product, setProducts] = useState([]);
   const [loading, setLoading] = useState();
@@ -45,7 +34,7 @@ const Product = () => {
       confirmButtonColor: '#3085d6',
       cancelButtonColor: '#d33',
       confirmButtonText: 'Yes, delete it!'
-    }).then( async (result) => {
+    }).then(async (result) => {
       if (result.isConfirmed) {
         try {
           setLoading(true);  // ตั้งค่า loading เป็น true ก่อนทำ API call
@@ -63,18 +52,10 @@ const Product = () => {
         }
       }
     })
-  
-    // try {
-    //   await api.delete(`/products/${id}`);
-    //   window.location.reload();
-    // } catch (error) {
-    //   console.error(error);
-    // }
   };
   return (
     <div>
       <h1>Product Management</h1>
-      {/* <Loading animation={{ ...loadingData }} /> */}
       <div className="row">
         {
           !loading ? (
@@ -88,13 +69,13 @@ const Product = () => {
               ))}
             </div>
           ) : (
-            // <Loading animation={loadingData}/>
             <Loading animation={{ ...loadingData }} />
           )
         }
       </div>
     </div>
-)};
+  )
+};
 
 
 export default Product;

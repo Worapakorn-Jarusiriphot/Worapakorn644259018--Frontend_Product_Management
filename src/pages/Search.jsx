@@ -8,20 +8,6 @@ import Loading from "../components/Loading";
 import * as loadingData from "../loading/rainbow.json"
 import Swal from 'sweetalert2'
 
-// const URL = "http://localhost:5000";  // แทนที่ด้วย URL ของเซิร์ฟเวอร์ของคุณ
-// const USERNAME = "root";     // แทนที่ด้วย username ของคุณ
-// const PASSWORD = null;     // แทนที่ด้วย password ของคุณ
-// // const URL = import.meta.env.VITE_BASE_URL;
-// // const USERNAME = import.meta.env.VITE_BASE_USERNAME;
-// // const PASSWORD = import.meta.env.VITE_BASE_PASSWORD;
-// const config = {
-//   auth: {
-//     username: USERNAME,
-//     password: PASSWORD,
-//   },
-//   headers: authHeader(),
-// };
-
 const Search = () => {
   const [data, setData] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
@@ -52,7 +38,7 @@ const Search = () => {
       confirmButtonColor: '#3085d6',
       cancelButtonColor: '#d33',
       confirmButtonText: 'Yes, delete it!'
-    }).then( async (result) => {
+    }).then(async (result) => {
       if (result.isConfirmed) {
         try {
           await api.delete(`/products/${id}`);
@@ -67,12 +53,6 @@ const Search = () => {
         }
       }
     })
-    // try {
-    //   await api.delete(`/products/${id}`);
-    //   window.location.reload();
-    // } catch (error) {
-    //   console.error(error);
-    // }
   };
 
 

@@ -5,17 +5,6 @@ import Loading from "../components/Loading";
 import * as loadingData from "../loading/rainbow.json"
 import Swal from 'sweetalert2'
 
-// import axios from "axios";
-// const URL = import.meta.env.VITE_BASE_URL;
-// const USERNAME = import.meta.env.VITE_BASE_USERNAME;
-// const PASSWORD = import.meta.env.VITE_BASE_PASSWORD;
-// const config = {
-//   auth: {
-//     username: USERNAME,
-//     password: PASSWORD,
-//   },
-// };
-
 const SignUp = () => {
   const [user, setUser] = useState({
     username: "",
@@ -54,8 +43,6 @@ const SignUp = () => {
         setError(true);
         setErrorMessage({ message: "Failed! Password mismatched !" });
       }
-      // alert("Sign Up");
-      // navigate("/signin");
     } catch (error) {
       console.error(error);
       setError(true);
@@ -122,14 +109,13 @@ const SignUp = () => {
                     Sign Up
                   </Link>{" "}
                   <Link to="/" className="btn btn-danger" onClick={handleClear}>
-                    Cancle
+                    Cancel
                   </Link>
                 </form>
               </div>
             </div>
           </div>
         ) : (
-          // <Loading animation={loadingData}/>
           <Loading animation={{ ...loadingData }} />
         )
       }

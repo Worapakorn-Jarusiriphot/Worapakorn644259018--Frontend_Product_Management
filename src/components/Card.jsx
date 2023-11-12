@@ -4,7 +4,7 @@ import { useAuthContext } from "../context/AuthContext";
 
 const Card = ({ product, handleDelete }) => {
   const { user } = useAuthContext();
-  
+
   function formatPrice(value) {
     const numericValue = parseFloat(value);
     return isNaN(numericValue) ? '' : numericValue.toLocaleString();
@@ -20,17 +20,17 @@ const Card = ({ product, handleDelete }) => {
   }
 
   return (
-    // <Link to={`/details/${product.id}`}>
-      <div className="card" key={product.id}>
-              <Link to={`/details/${product.id}`}>
+
+    <div className="card" key={product.id}>
+      <Link to={`/details/${product.id}`}>
         <img src={product.imagePath} alt="" className="card-img-top" />
       </Link>
-      
-        <div className="card-body2">
-      <h5 className="title">{truncateText(product.title, MAX_LENGTH)}</h5>
+
+      <div className="card-body2">
+        <h5 className="title">{truncateText(product.title, MAX_LENGTH)}</h5>
         <p className="card-text-detail">{product.description}</p>
         <div >
-        <p className="card-text">Category: {truncateText(product.category, MAX_LENGTH)}</p>
+          <p className="card-text">Category: {truncateText(product.category, MAX_LENGTH)}</p>
           <p className="card-text">{formatPrice(product.price)} ฿</p>
         </div>
         {user && user.roles.includes("ROLES_ADMIN") && (
@@ -38,11 +38,9 @@ const Card = ({ product, handleDelete }) => {
             <Link
               to=""
               className="btn btn-danger px-2 mx-1"
-              onClick={() => 
+              onClick={() => {
                 {
-                // if (window.confirm(`คุณจะลบสินค้า ${product.title} จริงๆหรอ`)) 
-                {
-                    handleDelete(product.id);
+                  handleDelete(product.id);
                 }
               }}
             >
@@ -58,8 +56,7 @@ const Card = ({ product, handleDelete }) => {
         )}
       </div>
     </div>
-  // </Link>
-);
+  );
 };
 
 export default Card;
