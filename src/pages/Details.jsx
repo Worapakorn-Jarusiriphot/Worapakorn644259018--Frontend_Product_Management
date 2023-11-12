@@ -47,10 +47,11 @@ const Details = () => {
       <div className="product-details-container">
         <h1 className="product-title">{product.title}</h1>
         <div className="product-price">
-          <span className="original-price">{product.price}</span>
-          <span className="sale-price">{product.price}</span>
+          <span className="original-price">฿ {product.price}</span>
+          <span className="sale-price">฿ {product.price}</span>
         </div>
-        <p className="product-description">{product.description}</p>
+        <p className="product-description">Description : {product.description}</p>
+        <p className="product-description">Category: {product.category}</p>
         <div className="product-actions">
           <button className="btn btn-primary" onClick={showAlert}>Add to cart</button>
           <button className="btn btn-secondary" onClick={showAlert}>Wishlist</button>
