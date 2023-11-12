@@ -10,9 +10,11 @@ import SignIn from "./pages/SignIn";
 import Logout from "./pages/Logout";
 import Profile from "./pages/Profile";
 import NotAllow from "./pages/NotAllow";
-import ProtectedRoute from "./pages/ProtectedRoute";
+import ProtectedRouteSearch from "./pages/ProtectedRouteSearch";
 import AdminRoute from "./pages/AdminRoute";
 import Layout from "./components/Layout";
+import Details from "./pages/Details";
+import ProtectedRouteDetails from "./pages/ProtectedRouteDetails";
 
 function App() {
   return (
@@ -31,9 +33,9 @@ function App() {
           <Route
             path="search"
             element={
-              <ProtectedRoute>
+              <ProtectedRouteSearch>
                 <Search />
-              </ProtectedRoute>
+              </ProtectedRouteSearch>
             }
           />
           <Route path="signin" element={<SignIn />} />
@@ -49,6 +51,11 @@ function App() {
               </AdminRoute>
             }
           />
+          <Route path="/details/:productId" element={
+            <ProtectedRouteDetails>
+              <Details />
+            </ProtectedRouteDetails>
+          } />
         </Route>
       </Routes>
     </BrowserRouter>

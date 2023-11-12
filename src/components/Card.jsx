@@ -22,7 +22,10 @@ const Card = ({ product, handleDelete }) => {
   return (
     // <Link to={`/details/${product.id}`}>
       <div className="card" key={product.id}>
+              <Link to={`/details/${product.id}`}>
         <img src={product.imagePath} alt="" className="card-img-top" />
+      </Link>
+      
         <div className="card-body2">
       <h5 className="title">{truncateText(product.title, MAX_LENGTH)}</h5>
         <p className="card-text-detail">{product.description}</p>
