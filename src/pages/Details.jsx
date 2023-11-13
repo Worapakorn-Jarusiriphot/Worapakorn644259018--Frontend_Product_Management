@@ -47,14 +47,14 @@ const Details = () => {
       <div className="product-details-container">
         <h1 className="product-title">{product.title}</h1>
         <div className="product-price">
-          <span className="original-price">฿ {product.price}</span>
-          <span className="sale-price">฿ {product.price}</span>
+          <p className="original-price2">฿ {product.price}</p>
+          <p className="sale-price2">฿ {product.price}</p>
         </div>
         <p className="product-description">Description : {product.description}</p>
         <p className="product-description">Category: {product.category}</p>
         <div className="product-actions">
-          <button className="btn btn-primary" onClick={showAlert}>Add to cart</button>
-          <button className="btn btn-secondary" onClick={showAlert}>Wishlist</button>
+          <button className="btn btn-primary2" onClick={showAlert}>Buy</button>
+          <button className="btn btn-secondary2" onClick={showAlert}>Add to cart</button>
         </div>
       </div>
     </div>

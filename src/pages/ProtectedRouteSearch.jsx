@@ -6,7 +6,7 @@ const ProtectedRouteSearch = ({ children }) => {
     const { user } = useAuthContext();
     if (!user) {
         Swal.fire({
-            title: "คุณต้องทำการ Sign In ก่อน",
+            title: "คุณต้อง Sign In ก่อน",
             text: "คุณต้องทำการ Sign In ก่อนคนถึงจะสามารถใช้งาน Search ได้ ",
             icon: "question"
         });

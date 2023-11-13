@@ -1,6 +1,8 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import NavBar from "./components/NavBar";
 import "bootstrap/dist/css/bootstrap.min.css";
+import './App.css'
+import './pages/Details.css'
 import Product from "./pages/Product";
 import Add from "./pages/Add";
 import Search from "./pages/Search";

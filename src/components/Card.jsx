@@ -31,7 +31,8 @@ const Card = ({ product, handleDelete }) => {
         <p className="card-text-detail">{product.description}</p>
         <div >
           <p className="card-text">Category: {truncateText(product.category, MAX_LENGTH)}</p>
-          <p className="card-text">{formatPrice(product.price)} ฿</p>
+          <p className="original-price2">{formatPrice(product.price)} ฿</p>
+          <p className="sale-price2">{formatPrice(product.price)} ฿</p>
         </div>
         {user && user.roles.includes("ROLES_ADMIN") && (
           <div >

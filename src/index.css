@@ -1,4 +1,4 @@
-/* :root {
+/* :root {navbarproducts
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
@@ -71,8 +71,9 @@ button:focus-visible {
 /* คลาสสำหรับตั้งค่าหลักของภาชนะที่มีฟอร์ม */
 .signin-container {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
+  justify-content: flex-start; /* Align the header to the top */
+  align-items: center; /* Center the card horizontally */
   height: 100vh;
   background-color: #F0F2F5;
 }
@@ -143,6 +144,26 @@ button:focus-visible {
   border-color: #4e4e4e;
 }
 
+/* สไตล์ปุ่มหลักและปุ่มรอง */
+.btn-primary2 {
+  width: 100%;
+  margin-top: 2px; /* เพิ่มระยะห่างด้านบน 16px */
+  margin-bottom: 2px; /* เพิ่มระยะห่างด้านล่าง 16px */
+  color: #fff;
+  background-color: #000000;
+  border-color: #000000;
+  box-shadow: none;
+}
+
+.btn-primary2:hover {
+  width: 100%;
+  margin-top: 2px; /* เพิ่มระยะห่างด้านบน 16px */
+  margin-bottom: 2px; /* เพิ่มระยะห่างด้านล่าง 16px */
+  color: #fff;
+  background-color: #4b4b4b;
+  border-color: #4e4e4e;
+}
+
 .btn-secondary {
   width: 100%;
   margin-top: 16px; /* เพิ่มระยะห่างด้านบน 16px */
@@ -153,6 +174,24 @@ button:focus-visible {
 }
 
 .btn-secondary:hover {
+  width: 100%;
+  margin-top: 16px; /* เพิ่มระยะห่างด้านบน 16px */
+  margin-bottom: 16px; /* เพิ่มระยะห่างด้านล่าง 16px */
+  color: #fff;
+  background-color: #5a6268;
+  border-color: #545b62;
+}
+
+.btn-secondary2 {
+  width: 100%;
+  margin-top: 16px; /* เพิ่มระยะห่างด้านบน 16px */
+  margin-bottom: 16px; /* เพิ่มระยะห่างด้านล่าง 16px */
+  color: #fff;
+  background-color: #6c757d;
+  border-color: #6c757d;
+}
+
+.btn-secondary2:hover {
   width: 100%;
   margin-top: 16px; /* เพิ่มระยะห่างด้านบน 16px */
   margin-bottom: 16px; /* เพิ่มระยะห่างด้านล่าง 16px */
@@ -290,16 +329,38 @@ button:focus-visible {
 
 /* รูปแบบสำหรับ NavBar */
 /* ปรับสีพื้นหลังของ NavBar เป็นสีดำ */
-.navbar-warning {
+.navbar-dark {
   background-color: #333 !important;
 }
 
-.navbar-brand {
+/* .navbar-brand {
   color: #f4f4f4 !important;
   font-size: 1.5rem;
   font-weight: bold;
   transition: all 0.3s;
+} */
+
+.navbar-brand {
+  color: #f4f4f4 !important;
+  font-size: 4vw; /* Start with a viewport-relative size */
+  font-weight: bold;
+  transition: all 0.3s;
 }
+
+/* Set a minimum font size for extremely small viewports */
+@media (max-width: 320px) {
+  .navbar-brand {
+    font-size: 12px; /* This is a reasonable minimum font size */
+  }
+}
+
+/* Set a maximum font size for larger viewports to prevent the text from getting too large */
+@media (min-width: 768px) {
+  .navbar-brand {
+    font-size: 1.5rem; /* This will be the maximum font size */
+  }
+}
+
 
 /* สีของลิงก์ใน NavBar ทำให้มีความเป็นเนื้อเนียนกับสีพื้นหลัง */
 .navbar .nav-link {
@@ -330,18 +391,51 @@ button:focus-visible {
 } */
 
 /* รูปแบบสำหรับหัวข้อ Product */
-h1 {
+/* h1 {
   font-size: 3rem;
   font-weight: 600;
   text-align: center;
   color: #2c2c2c;
   padding: 1rem 1.5rem;
-  border-radius: 15px;
+  border-radius: 15px; */
   /* background: linear-gradient(145deg, #f9f9f9, #e2e2e2);
   border: 1px solid #b8b8b8;
   box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.25); */
-  transition: all 0.2s;
+  /* transition: all 0.2s;
+} */
+
+/* Base style for h1 */
+h1 {
+  font-size: 7.5vw; /* Scales the font size based on viewport width */
+  font-weight: 600;
+  text-align: center;
+  color: #2c2c2c;
+  /* Other styles */
 }
+
+/* Media query for small devices */
+@media (max-width: 320px) {
+  h1 {
+    font-size: 12px; /* Ensures text remains legible on very small screens */
+  }
+}
+
+/* Media query for larger devices */
+@media (min-width: 768px) {
+  h1 {
+    font-size: 3rem;
+    font-weight: 600;
+    text-align: center;
+    color: #2c2c2c;
+    padding: 1rem 1.5rem;
+    border-radius: 15px;
+    /* background: linear-gradient(145deg, #f9f9f9, #e2e2e2);
+    border: 1px solid #b8b8b8;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.25); */
+    transition: all 0.2s;
+  }
+}
+
 
 
 
@@ -418,23 +512,7 @@ input:focus{
 /* ตัวคอนเทนเนอร์สำหรับรายละเอียดสินค้า (ชื่อ, คำอธิบาย, ฯลฯ) 
    มีพื้นหลังสีเข้มและข้อความสีสว่าง 
 */
-.card-body2 {
-  padding: 16px;
-  background-color: #1a1a1a;
-  color: rgba(255, 255, 255, 0.87);
-}
 
-.card-body {
-  padding: 16px;
-  background-color: #ffffff;
-  color: rgba(255, 255, 255, 0.87);
-}
-
-.card-body3 {
-  padding: 16px;
-  background-color: #1a1a1a;
-  color: rgba(255, 255, 255, 0.87);
-}
 
 /* ชื่อสินค้า มันเป็นตัวหนาและมีระยะห่างที่ด้านล่าง */
 .title {
@@ -523,42 +601,6 @@ input:focus{
 .sign-in-card .btn:hover {
   transform: translateY(-4px);
   box-shadow: 8px 8px 14px rgba(0, 0, 0, 0.3);
-}
-
-/* รูปแบบสำหรับกรอบ Sign In ภายในคลาส col-6 card justify-content-center */
-.col-6.card.justify-content-center {
-  width: 100%; /* ขยายความกว้างของกรอบ */
-  padding: 4rem; /* เพิ่มพื้นที่ว่างรอบ ๆ กรอบ */
-  background: linear-gradient(145deg, #ffffff, #f0f0f0);
-  border: 2px solid #c8c8c8;
-  box-shadow: 12px 12px 24px rgba(0, 0, 0, 0.25);
-  transition: all 0.2s;
-}
-
-.col-6.card.justify-content-center h2 {
-  font-size: 2.8rem; /* เพิ่มขนาดตัวอักษร */
-  font-weight: bold;
-  color: #2a2a2a;
-  margin-bottom: 2.5rem; /* เพิ่มพื้นที่ว่างระหว่างหัวข้อกับแบบฟอร์ม */
-}
-
-.col-6.card.justify-content-center .form-control {
-  border-radius: 18px; /* เพิ่มรูปแบบขอบให้มน */
-  padding: 1.2rem 1.8rem; /* เพิ่มพื้นที่ว่างภายในช่องป้อนข้อมูล */
-  font-size: 1.3rem;
-  border: 1px solid #b8b8b8;
-}
-
-.col-6.card.justify-content-center .btn {
-  font-size: 1.3rem;
-  padding: 0.8rem 1.8rem; /* เพิ่มพื้นที่ว่างภายในปุ่ม */
-  border-radius: 18px; /* เพิ่มรูปแบบขอบให้มน */
-  transition: all 0.2s;
-}
-
-.col-6.card.justify-content-center .btn:hover {
-  transform: translateY(-5px);
-  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.35);
 }
 
 
@@ -664,51 +706,6 @@ input:focus{
 
 
 
-/* ปรับปรุงรูปแบบสำหรับการ์ด profile */
-.card.profile {
-  width: 100%;
-  max-width: 1800px;
-  margin: 2rem auto;
-  padding: 9.5rem;
-  border: 1px solid #e0e0e0;
-  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
-  border-radius: 20px;
-  background-color: #f9f9f9;
-  transition: transform 0.3s;
-}
-
-.card.profile:hover {
-  transform: none;
-}
-
-.card.profile h2 {
-  font-size: 2.5rem;
-  margin-bottom: 2rem;
-  color: #444;
-  border-bottom: 3px solid #e0e0e0;
-  padding-bottom: 0.8rem;
-}
-
-.card.profile img {
-  width: 180px;
-  height: 180px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin-bottom: 2rem;
-  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
-}
-
-.card.profile p {
-  font-size: 1.3rem;
-  color: #555;
-  margin-bottom: 1.5rem;
-}
-
-.card.profile .btn {
-  padding: 1rem 2rem;
-  font-size: 1.2rem;
-  border-radius: 12px;
-}
 
 
 
@@ -761,7 +758,7 @@ input:focus{
 }
 
 /* ปรับปรุงรูปแบบสำหรับ nav-link */
-.nav-link {
+/* .nav-link {
   font-size: 1.3rem;
   color: #555;
   transition: color 0.3s;
@@ -769,7 +766,29 @@ input:focus{
 
 .nav-link:hover {
   color: #333;
+} */
+
+
+/* Base styles for nav links */
+.nav-link {
+  font-size: 3.5vw; /* Starts with a viewport relative size */
+  transition: color 0.3s; /* Assuming you want a transition for color changes */
 }
+
+/* Define a reasonable minimum font size for very small viewports to maintain legibility */
+@media (max-width: 320px) {
+  .nav-link {
+    font-size: 10px; /* Minimum font size */
+  }
+}
+
+/* Define a maximum font size for larger viewports to prevent the text from becoming too large */
+@media (min-width: 768px) {
+  .nav-link {
+    font-size: 16px; /* Maximum font size */
+  }
+}
+
 
 
 
@@ -1049,3 +1068,347 @@ input:focus{
 
 
 
+@media only screen and (max-width: 200px) {
+  /* คลาสสำหรับตั้งค่าหลักของภาชนะที่มีฟอร์ม */
+  .signin-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #F0F2F5;
+  }
+  
+  /* สไตล์ของการ์ดที่มีฟอร์มการเข้าสู่ระบบ */
+  .signin-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+  }
+  
+  /* สไตล์หัวข้อของการ์ด */
+  .signin-header {
+    margin-bottom: 1rem;
+    color: #333;
+    text-align: center;
+  }
+  
+  /* สไตล์สำหรับกลุ่มฟอร์ม */
+  .form-group {
+    margin-bottom: 1rem;
+  }
+  
+  /* สไตล์สำหรับควบคุมฟอร์ม (ช่องกรอกข้อมูล) */
+  .form-control {
+    display: block;
+    width: 100%;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  }
+  
+  /* เมื่อช่องกรอกข้อมูลมีการโฟกัส */
+  .form-control:focus {
+    color: #495057;
+    background-color: #fff;
+    border-color: #80bdff;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+  }
+  
+  /* สไตล์ปุ่มหลักและปุ่มรอง */
+  .btn-primary {
+    width: 100%;
+    margin-top: 2px; /* เพิ่มระยะห่างด้านบน 16px */
+    margin-bottom: 2px; /* เพิ่มระยะห่างด้านล่าง 16px */
+    color: #fff;
+    background-color: #000000;
+    border-color: #000000;
+    box-shadow: none;
+  }
+  
+  .btn-primary:hover {
+    width: 100%;
+    margin-top: 2px; /* เพิ่มระยะห่างด้านบน 16px */
+    margin-bottom: 2px; /* เพิ่มระยะห่างด้านล่าง 16px */
+    color: #fff;
+    background-color: #4b4b4b;
+    border-color: #4e4e4e;
+  }
+  
+  .btn-secondary {
+    width: 100%;
+    margin-top: 16px; /* เพิ่มระยะห่างด้านบน 16px */
+    margin-bottom: 16px; /* เพิ่มระยะห่างด้านล่าง 16px */
+    color: #fff;
+    background-color: #6c757d;
+    border-color: #6c757d;
+  }
+  
+  .btn-secondary:hover {
+    width: 100%;
+    margin-top: 16px; /* เพิ่มระยะห่างด้านบน 16px */
+    margin-bottom: 16px; /* เพิ่มระยะห่างด้านล่าง 16px */
+    color: #fff;
+    background-color: #5a6268;
+    border-color: #545b62;
+  }
+  
+  /* สไตล์ข้อความแสดงข้อผิดพลาด */
+  .signin-error {
+    color: #dc3545;
+    margin-bottom: 1rem;
+  }
+  
+  /* สไตล์สำหรับส่วนท้ายของการ์ด */
+  .signin-footer {
+    margin-top: 1rem;
+    text-align: center;
+  }
+  
+  /* ลิงก์ในส่วนท้ายของการ์ด */
+  .signin-footer a {
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  .signin-footer a:hover {
+    text-decoration: underline;
+  }
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media only screen and (min-width: 768px) { 
+  /* คลาสสำหรับตั้งค่าหลักของภาชนะที่มีฟอร์ม */
+.signin-container {
+  display: flex;
+  flex-direction: row; /* Align items horizontally for desktop */
+  justify-content: center; /* Space between header and card */
+  align-items: center; /* Center items vertically */
+  height: 100vh;
+  background-color: #F0F2F5;
+}
+
+/* สไตล์ของการ์ดที่มีฟอร์มการเข้าสู่ระบบ */
+.signin-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+}
+
+
+/* สไตล์หัวข้อของการ์ด */
+.signin-header {
+  margin-bottom: 1rem;
+  color: #333;
+  text-align: center;
+}
+
+/* สไตล์สำหรับกลุ่มฟอร์ม */
+.form-group {
+  margin-bottom: 1rem;
+}
+
+/* สไตล์สำหรับควบคุมฟอร์ม (ช่องกรอกข้อมูล) */
+.form-control {
+  display: block;
+  width: 100%;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #495057;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+/* เมื่อช่องกรอกข้อมูลมีการโฟกัส */
+.form-control:focus {
+  color: #495057;
+  background-color: #fff;
+  border-color: #80bdff;
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+/* สไตล์ปุ่มหลักและปุ่มรอง */
+.btn-primary {
+  width: 100%;
+  margin-top: 2px; /* เพิ่มระยะห่างด้านบน 16px */
+  margin-bottom: 2px; /* เพิ่มระยะห่างด้านล่าง 16px */
+  color: #fff;
+  background-color: #000000;
+  border-color: #000000;
+  box-shadow: none;
+}
+
+.btn-primary:hover {
+  width: 100%;
+  margin-top: 2px; /* เพิ่มระยะห่างด้านบน 16px */
+  margin-bottom: 2px; /* เพิ่มระยะห่างด้านล่าง 16px */
+  color: #fff;
+  background-color: #4b4b4b;
+  border-color: #4e4e4e;
+}
+
+.btn-secondary {
+  width: 100%;
+  margin-top: 16px; /* เพิ่มระยะห่างด้านบน 16px */
+  margin-bottom: 16px; /* เพิ่มระยะห่างด้านล่าง 16px */
+  color: #fff;
+  background-color: #6c757d;
+  border-color: #6c757d;
+}
+
+.btn-secondary:hover {
+  width: 100%;
+  margin-top: 16px; /* เพิ่มระยะห่างด้านบน 16px */
+  margin-bottom: 16px; /* เพิ่มระยะห่างด้านล่าง 16px */
+  color: #fff;
+  background-color: #5a6268;
+  border-color: #545b62;
+}
+
+/* สไตล์ข้อความแสดงข้อผิดพลาด */
+.signin-error {
+  color: #dc3545;
+  margin-bottom: 1rem;
+}
+
+/* สไตล์สำหรับส่วนท้ายของการ์ด */
+.signin-footer {
+  margin-top: 1rem;
+  text-align: center;
+}
+
+/* ลิงก์ในส่วนท้ายของการ์ด */
+.signin-footer a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.signin-footer a:hover {
+  text-decoration: underline;
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 768px) {
+  
+  .product-title, .price-box, .sale-price {
+    font-size: 19px; /* ลดขนาดตัวอักษร */
+  }
+
+  .product-details-container {
+    width: 80%;
+    font-size: 0.9rem; /* ลดขนาดตัวอักษรสำหรับรายละเอียด */
+  }
+
+  .product-container {
+    padding: 1rem; /* ปรับขนาดพื้นที่รอบ ๆ */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    max-width: 900px;
+    margin: 0.1rem auto;
+    background-color: #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+  }
+
+  .product-image {
+      width: 70%;
+      height: auto;
+      padding-top: 1rem;
+      margin-left: auto; /* เพิ่ม margin-left auto */
+      margin-right: auto; /* เพิ่ม margin-right auto */
+      display: block; /* กำหนดให้รูปภาพเป็น block element */
+  }
+
+  .product-description {
+    width: 135%;
+      word-wrap: break-word;
+      overflow-wrap: break-word;  
+  }
+
+  /* สไตล์ปุ่มหลักและปุ่มรอง */
+  .btn-primary2 {
+    width: 130%;
+    margin-top: 2px; /* เพิ่มระยะห่างด้านบน 16px */
+    margin-bottom: 2px; /* เพิ่มระยะห่างด้านล่าง 16px */
+    color: #fff;
+    background-color: #000000;
+    border-color: #000000;
+    box-shadow: none;
+  }
+
+.btn-primary2:hover {
+  width: 130%;
+  margin-top: 2px; /* เพิ่มระยะห่างด้านบน 16px */
+  margin-bottom: 2px; /* เพิ่มระยะห่างด้านล่าง 16px */
+  color: #fff;
+  background-color: #4b4b4b;
+  border-color: #4e4e4e;
+}
+
+.btn-secondary2 {
+  width: 130%;
+  margin-top: 16px; /* เพิ่มระยะห่างด้านบน 16px */
+  margin-bottom: 16px; /* เพิ่มระยะห่างด้านล่าง 16px */
+  color: #fff;
+  background-color: #6c757d;
+  border-color: #6c757d;
+}
+
+.btn-secondary2:hover {
+  width: 130%;
+  margin-top: 16px; /* เพิ่มระยะห่างด้านบน 16px */
+  margin-bottom: 16px; /* เพิ่มระยะห่างด้านล่าง 16px */
+  color: #fff;
+  background-color: #5a6268;
+  border-color: #545b62;
+}
+  /* ปรับแต่งองค์ประกอบอื่นๆ ตามความต้องการ */
+}
