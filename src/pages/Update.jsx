@@ -79,17 +79,18 @@ const Update = () => {
               <div className="error">{error && "Somthing went wrong !!"}</div>
               <div className="card-body">
                 <form>
-                  <div className="form-group">
-                    <label htmlFor="name">Product Title</label>
-                    <input
+                  <Form.Group className="form-group">
+                    <Form.Label htmlFor="name">Product Title</Form.Label>
+                    <Form.Control
                       type="text"
                       className="form-control"
                       name="title"
+                      as="textarea"
                       placeholder="Product Title"
                       onChange={handleChange}
                       value={product.title}
                     />
-                  </div>
+                  </Form.Group>
                   <Form.Group className="form-group">
                     <Form.Label htmlFor="name">Product Image Path</Form.Label>
                     <Form.Control
@@ -125,17 +126,18 @@ const Update = () => {
                       value={product.price}
                     />
                   </div>
-                  <div className="form-group">
-                    <label htmlFor="name">Product Category</label>
-                    <input
+                  <Form.Group className="form-group">
+                    <Form.Label htmlFor="name">Product Category</Form.Label>
+                    <Form.Control
                       type="text"
                       className="form-control"
                       name="category"
+                      as="textarea"
                       placeholder="Product Category"
                       onChange={handleChange}
                       value={product.category}
                     />
-                  </div>
+                  </Form.Group>
 
                   <Link to="" className={`btn btn-success ${!isFormComplete() ? 'disabled' : ''}`} onClick={handleClick}>
                     Update
