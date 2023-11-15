@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import api from "../services/api"
+import Form from 'react-bootstrap/Form';
 import Loading from "../components/Loading";
 import * as loadingData from "../loading/rainbow.json"
 import Swal from 'sweetalert2'
@@ -89,28 +90,30 @@ const Update = () => {
                       value={product.title}
                     />
                   </div>
-                  <div className="form-group">
-                    <label htmlFor="name">Product Image Path</label>
-                    <input
+                  <Form.Group className="form-group">
+                    <Form.Label htmlFor="name">Product Image Path</Form.Label>
+                    <Form.Control
                       type="text"
                       className="form-control"
                       name="imagePath"
+                      as="textarea"
                       placeholder="Product Image Path"
                       onChange={handleChange}
                       value={product.imagePath}
                     />
-                  </div>
-                  <div className="form-group">
-                    <label htmlFor="name">Product Description</label>
-                    <input
+                  </Form.Group>
+                  <Form.Group className="form-group">
+                    <Form.Label htmlFor="name">Product Description</Form.Label>
+                    <Form.Control
                       type="text"
                       className="form-control"
                       name="description"
+                      as="textarea"
                       placeholder="Product Description"
                       onChange={handleChange}
                       value={product.description}
                     />
-                  </div>
+                  </Form.Group>
                   <div className="form-group">
                     <label htmlFor="name">Product Price</label>
                     <input
